@@ -1,0 +1,55 @@
+
+"Doing something useful is a prerequisite to getting users, but [users are] a prerequisite to doing something useful." 
+- John Hunter, creator of matplotlib 
+
+
+
+I. Goal
+The problem I wanted to solve is that FOSS software efforts, especially by individuals tend to be isolated, redundant, undiscovered, and ultimately run out of momentum. This goes against the prevailing sentiment that we are entering an era of increased collaboration with the encouraged/required sharing of data, source code, and publications. I wanted to address this by aggregating open source astronomy efforts on GitHub. The goal was that contributing/starting FOSS shouldn't feel like throwing something into the ether.
+
+II. API + JS
+GitHub provides a nice API interface to it's services with bindings to several libraries in several languages. I started with a JS library and an example I found with Angular.js + d3.js, after 5 hours I was able to get JSON objects back from API requests. But then I realized that I was going to need more domain knowledge if I wanted to aggregate anything beyond the top projects. I switched to using the pygithub library (thanks Vanessa!). This lead to a rabbit hole of how to pick out astronomy projects.
+
+III. Finding the Repos
+What you query turned out to be a big deal; this basically turned into an archival research proposal. Lots of very specific search terms with lots signal but not much coverage vs very broad search terms with lots of noise.
+
+
+   * Search Term: Repos
+   * Hubble Space Telescope: 4
+   * Gamma Ray: 15
+   * Radio Astronomy: 18
+   * Astrophysics: 53
+   * Cosmology: 83
+   * Astronomy: 248
+   * Astro: 727
+
+I used a couple of metrics, the first was a heuristic measure of if the top projects I knew about were coming up in my results. The second was to tokenize the repo descriptions and see if the word frequency made sense. At this point I started to feel the limitations of the API library I chose and it was getting late.
+
+Observation: 
+
+
+   * People aren't making use of the Teams feature. It's all individuals. 
+
+
+Questions: 
+
+
+   * How does that rate of stars and forks compare with the general population of repos?
+   * How do we keep out astronomy hacks from going crickets?
+
+
+IV. What I Think We Need
+My vision is still a "this week" in AstroFOSS. For example the repo with the most …
+
+… new LOC.
+… deleted LOC.
+… PR accepted.
+… new tickets.
+… most commented ticket.
+… most commits.
+… new projects.
+
+GitHub is great for exploring and finding specific repositories. It's not great for finding and exploring classes of repositories. Basically need a view/workflow built around tags. For programmers you can do this sufficiently by sub-selecting by language, which is analysis to a "field" in software development. If they really want to expand their adoption by the science/astronomy community in this way improvements are needed. 
+
+V. Next Steps
+Arfon Smith is transitioning from Zooniverse to GitHub as their "Science Guy". If I started a twitter feed would people be interested?
